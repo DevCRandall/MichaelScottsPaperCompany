@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MichaelScottsPaperCompany.UI.MVC.Models
+namespace MichaelScottsPaperCompany.DATA.EF.Models
 {
     public partial class MichaelScottsPaperCompanyContext : DbContext
     {
@@ -132,6 +132,8 @@ namespace MichaelScottsPaperCompany.UI.MVC.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+
+                entity.HasKey(e => e.CategoryId);
 
                 entity.Property(e => e.CategoryDescription)
                     .HasMaxLength(1000)

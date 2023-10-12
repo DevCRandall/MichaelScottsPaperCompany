@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MichaelScottsPaperCompany.UI.MVC.Models
+namespace MichaelScottsPaperCompany.DATA.EF.Models
 {
     public partial class Category
     {
@@ -9,6 +9,7 @@ namespace MichaelScottsPaperCompany.UI.MVC.Models
         {
             Items = new HashSet<Item>();
         }
+
 
         public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
