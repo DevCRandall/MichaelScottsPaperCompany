@@ -1,3 +1,4 @@
+using MichaelScottsPaperCompany.DATA.EF.Models;
 using MichaelScottsPaperCompany.UI.MVC.Data;
 using MichaelScottsPaperCompany.UI.MVC.Models;
 using Microsoft.AspNetCore.Identity;

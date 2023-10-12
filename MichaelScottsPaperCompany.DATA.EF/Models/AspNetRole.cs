@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MichaelScottsPaperCompany.UI.MVC.Models
+namespace MichaelScottsPaperCompany.DATA.EF.Models
 {
     public partial class AspNetRole
     {
