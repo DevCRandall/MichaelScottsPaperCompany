@@ -1,30 +1,34 @@
 ﻿@model MichaelScottsPaperCompany.DATA.EF.Models.Category
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Category Details";
 }
 
-<h1>Details</h1>
+<h1 class="p-3">Category Details</h1>
 
-<div>
-    <h4>Category</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryDescription)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryDescription)
-        </dd>
+<div class="row m-3 d-flex justify-content-center">
+<div class="card border-primary mb3 text-center" style="width: 25rem">
+    @*<h4>Category</h4>
+    <hr />*@
+    <dl>
+        <div class="card-body">
+            <dt class="card-header fs-4">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </dt>
+            <dd class="card-text">
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+            <dt class="card-header fs-4">
+                @Html.DisplayNameFor(model => model.CategoryDescription)
+            </dt>
+            <dd class="card-text">
+                @Html.DisplayFor(model => model.CategoryDescription)
+            </dd>
+        </div>
     </dl>
+            <p>
+            <a asp-action="Edit" asp-route-id="@Model?.CategoryId" class="btn btn-primary">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </p>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.CategoryId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>
