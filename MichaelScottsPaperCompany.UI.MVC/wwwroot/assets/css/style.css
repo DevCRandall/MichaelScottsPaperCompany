@@ -120,7 +120,7 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(0, 0, 0);
   height: 80px;
 }
 
@@ -376,6 +376,27 @@ h6 {
 
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
+}
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
 }
 
 /*--------------------------------------------------------------

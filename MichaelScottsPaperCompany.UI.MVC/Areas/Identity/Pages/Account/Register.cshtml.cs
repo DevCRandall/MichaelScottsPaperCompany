@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using MichaelScottsPaperCompany.DATA.EF.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -97,6 +98,40 @@ namespace MichaelScottsPaperCompany.UI.MVC.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            // We are adding properties below so we can add this info
+            // as textboxes in the View
+
+            //The use of ! and ? below are "null-forgiving operators", which basically 
+            //let the compiler know which information should be considered nullable/not nullable
+
+            [Required]
+            [StringLength(50, ErrorMessage = "Max 50 characters")]
+            public string FirstName { get; set; } = null!;
+
+            [Required]
+            [StringLength(50, ErrorMessage = "Maximum 50 characters")]
+            public string LastName { get; set; } = null!;
+
+            [StringLength(150, ErrorMessage = "Maximum 150 characters")]
+            public string? Address { get; set; }
+
+            [StringLength(50, ErrorMessage = "Maximum 50 characters")]
+            [Required]
+            public string? City { get; set; }
+
+            [StringLength(2, ErrorMessage = "Maximum 2 characters")]
+            [Required]
+            public string? State { get; set; }
+
+            [StringLength(5, ErrorMessage = "Maximum 5 characters")]
+            [Required]
+            [DataType(DataType.PostalCode)]
+            public string? Zip { get; set; }
+
+            [StringLength(24, ErrorMessage = "Maximum 24 characters")]
+            [DataType(DataType.PhoneNumber)]
+            public string? Phone { get; set; }
         }
 
 
@@ -123,6 +158,27 @@ namespace MichaelScottsPaperCompany.UI.MVC.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
+
+                    #region Custom User Registration
+
+                    var _context = new MichaelScottsPaperCompanyContext();
+                    var userDetail = new UserDetail()
+                    {
+                        UserId = userId,
+                        FirstName = Input.FirstName,
+                        LastName = Input.LastName,
+                        Address = Input.Address,
+                        City = Input.City,
+                        State = Input.State,
+                        Zip = Input.Zip,
+                        Phone = Input.Phone,
+                    };
+
+                    _context.UserDetails.Add(userDetail);
+                    _context.SaveChanges();
+
+                    #endregion Custom User Registration
+
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(

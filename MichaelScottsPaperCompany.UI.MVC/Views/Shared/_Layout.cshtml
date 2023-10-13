@@ -39,41 +39,49 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <header id="header" class="fixed-top d-flex align-items-center" style="max-height:80px;">
         <div class="container-fluid">
 
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-11 d-flex align-items-center justify-content-between">
-                    <h1 class="logo"><a href="index.html">BizPage</a></h1>
+                    <h1 class="logo"><a href="@Url.Action("Index", "Home")">BizPage</a></h1>
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <!-- <a href="index.html" class="logo"><img src="~/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
                     <nav id="navbar" class="navbar">
                         <ul>
-                            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                            <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><a class="nav-link scrollto" href="@Url.Action("Index", "Categories")">Categories</a></li>
                             <li><a class="nav-link scrollto" href="@Url.Action("Index", "Items")">Items</a></li>
                             <li><a class="nav-link scrollto " href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="@Url.Action("Index", "Sales")">Sales</a></li>
-                                    <li class="dropdown">
-                                        @*<a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>*@
-                                        @*<ul>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="dropdown">
+                                    <a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "Sales")">Sales</a></li>
+                                        <li><a href="@Url.Action("Index", "OrderItems")">Orders</a></li>
+                                        <li><a href="@Url.Action("Index", "UserDetails")">User Details</a></li>
+                                        <li><a href="@Url.Action("ListRoles", "Administration")">Roles</a></li>
+                                        <li>
+                                            @*<li class="dropdown">
+                                        <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
                                             <li><a href="#">Deep Drop Down 1</a></li>
                                             <li><a href="#">Deep Drop Down 2</a></li>
                                             <li><a href="#">Deep Drop Down 3</a></li>
                                             <li><a href="#">Deep Drop Down 4</a></li>
                                             <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>*@
-                                    </li>
-                                    <li><a href="@Url.Action("Index", "UserDetails")">User Details</a></li>
-                                    <li><a href="@Url.Action("Index", "OrderItems")">Orders</a></li>
-                                    @*<li><a href="#">Drop Down 4</a></li>*@
-                                </ul>
-                            </li>
+                                        </ul>
+                                    </li>*@
+                                    </ul>
+                                </li>
+                            }
                             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+
+                            <partial name="_LoginPartial" />
+                            
+
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
@@ -82,9 +90,9 @@
 
         </div>
     </header><!-- End Header -->
-    
+    <main id="main" style="margin-top:80px">
     @RenderBody();
-
+    </main><!-- End #main -->
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="footer-top">
@@ -101,9 +109,8 @@
                         <ul>
                             <li><i class="bi bi-chevron-right"></i> <a href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><i class="bi bi-chevron-right"></i> <a href="@Url.Action("Index", "Categories")">Categories</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="@Url.Action("Index", "Items")">Items</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
                         </ul>
                     </div>
 
