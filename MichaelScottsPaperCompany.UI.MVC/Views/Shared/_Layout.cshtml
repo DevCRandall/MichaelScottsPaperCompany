@@ -52,7 +52,7 @@
                         <ul>
                             <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><a class="nav-link scrollto" href="@Url.Action("Index", "Categories")">Categories</a></li>
-                            <li><a class="nav-link scrollto" href="@Url.Action("Index", "Items")">Items</a></li>
+                            <li><a class="nav-link scrollto" href="@Url.Action("Index", "Items")">Shop</a></li>
                             <li><a class="nav-link scrollto " href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
                             @if (User.IsInRole("Admin"))
                             {
@@ -77,7 +77,7 @@
                                     </ul>
                                 </li>
                             }
-                            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                            <li><a class="nav-link scrollto" href="@Url.Action("Contact", "Home")">Contact</a></li>
 
                             <partial name="_LoginPartial" />
                             

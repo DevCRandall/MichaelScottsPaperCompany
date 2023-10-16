@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +21,11 @@ namespace MichaelScottsPaperCompany.DATA.EF.Models //Metadata
 
     #region Item
     [ModelMetadataType(typeof(ItemMetadata))]
-    public partial class Item { }
+    public partial class Item 
+    {
+        [NotMapped]
+        public IFormFile? Image { get; set; }
+    }
     #endregion Item
 
 
