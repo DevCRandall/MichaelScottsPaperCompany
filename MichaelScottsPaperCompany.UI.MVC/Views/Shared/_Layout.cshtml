@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -78,6 +79,10 @@
                                 </li>
                             }
                             <li><a class="nav-link scrollto" href="@Url.Action("Contact", "Home")">Contact</a></li>
+
+                            <li><a href="@Url.Action("Index", "ShoppingCart")" class="bi bi-cart4"></a></li>
+
+                            
 
                             <partial name="_LoginPartial" />
                             
