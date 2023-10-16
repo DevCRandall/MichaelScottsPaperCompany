@@ -11,7 +11,7 @@ namespace MichaelScottsPaperCompany.DATA.EF.Models
         }
 
         public int ItemId { get; set; }
-        public string ItemName { get; set; } = null!;
+        public string? ItemName { get; set; }
         public decimal ItemPrice { get; set; }
         public string? ItemDescription { get; set; }
         public int ItemsInStock { get; set; }

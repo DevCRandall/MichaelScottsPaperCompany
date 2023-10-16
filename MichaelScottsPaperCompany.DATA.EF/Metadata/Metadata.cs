@@ -60,7 +60,6 @@ namespace MichaelScottsPaperCompany.DATA.EF.Models //Metadata
         public DateTime? LastOrderedDate { get; set; }
 
         [Display(Name = "Image")]
-        [StringLength(75)]
         public string? ItemImage { get; set; }
     }
 
