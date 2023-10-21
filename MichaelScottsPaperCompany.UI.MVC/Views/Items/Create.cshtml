@@ -1,14 +1,13 @@
 ﻿@model MichaelScottsPaperCompany.DATA.EF.Models.Item
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add Item";
 }
 
-<h1>Create</h1>
+<h1 class="p-3">Add Item</h1>
 
-<h4>Item</h4>
-<hr />
-<div class="row">
+
+<div class="row m-3">
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -34,11 +33,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ManufacturerId" class="control-label"></label>
-                <select asp-for="ManufacturerId" class ="form-control" asp-items="ViewBag.ManufacturerId"></select>
+                <select asp-for="ManufacturerId" class="form-control" asp-items="ViewBag.ManufacturerId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="InStock" class="control-label"></label>
@@ -56,17 +55,15 @@
                 <input type="file" asp-for="Image" class="form-control" />
                 <span asp-validation-for="ItemImage" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group p-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

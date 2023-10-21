@@ -1,15 +1,26 @@
 ﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.Item>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tiled Items";
 }
+<div class="m-3">
+<h1 class="p-4">Shop</h1>
 
-<h1>Index</h1>
-
+<div class="d-flex align-items-end flex-column px-3">
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Add +</a>
 </p>
-<table class="table">
+
+        <div class="row gx-0 gy-x">
+            <div class="col-2 align-items-center d-flex flex-row-reverse">
+                <a asp-action="Index" asp-controller="Items"><i class="bi bi-list-ul text-primary fw-bold"></i></a>
+                <a asp-action="Tiled" asp-controller="Items"><i class="bi bi-grid-3x3-gap fw-light"></i></a>
+            </div>
+        </div>
+
+</div>
+
+<table class="table table-bordered p-3">
     <thead>
         <tr>
             <th>
@@ -43,9 +54,10 @@
         </tr>
     </thead>
     <tbody>
+
         @foreach (var item in Model)
         {
-            <tr>
+            <tr style="background-color: #eee;">
                 <td>
                     @Html.DisplayFor(modelItem => item.ItemName)
                 </td>
@@ -83,3 +95,4 @@
         }
     </tbody>
 </table>
+</div>

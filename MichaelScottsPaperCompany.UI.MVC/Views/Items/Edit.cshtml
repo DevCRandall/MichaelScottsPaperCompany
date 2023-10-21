@@ -1,14 +1,13 @@
 ﻿@model MichaelScottsPaperCompany.DATA.EF.Models.Item
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Item";
 }
 
-<h1>Edit</h1>
+<h1 class="p-3">Edit Item</h1>
 
-<h4>Item</h4>
-<hr />
-<div class="row">
+
+<div class="row m-3">
     <div class="col-md-4">
         <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -25,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ItemDescription" class="control-label"></label>
-                <input asp-for="ItemDescription" class="form-control" />
+                <textarea asp-for="ItemDescription" class="form-control" style="height: 100px"></textarea>
                 <span asp-validation-for="ItemDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,17 +58,16 @@
                 <input type="file" asp-for="Image" class="form-control text-center" />
                 <span asp-validation-for="ItemImage" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group p-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
