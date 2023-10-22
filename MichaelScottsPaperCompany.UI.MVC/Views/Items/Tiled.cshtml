@@ -4,95 +4,74 @@
     ViewData["Title"] = "Tiled Items";
 }
 <div class="m-3">
-<h1 class="p-4">Shop</h1>
+    <h1 class="p-4">Shop</h1>
 
-<div class="d-flex align-items-end flex-column px-3">
-<p>
-    <a asp-action="Create" class="btn btn-primary">Add +</a>
-</p>
+    <div class="d-flex align-items-end flex-column px-3">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Add +</a>
+        </p>
 
         <div class="row gx-0 gy-x">
             <div class="col-2 align-items-center d-flex flex-row-reverse">
-                <a asp-action="Index" asp-controller="Items"><i class="bi bi-list-ul text-primary fw-bold"></i></a>
-                <a asp-action="Tiled" asp-controller="Items"><i class="bi bi-grid-3x3-gap fw-light"></i></a>
+                <a asp-action="Index" asp-controller="Items"><i class="bi bi-list-ul fw-light"></i></a>
+                <a asp-action="Tiled" asp-controller="Items"><i class="bi bi-grid-3x3-gap text-primary fw-boldt"></i></a>
             </div>
         </div>
 
+    </div>
+
+    <div class="section-bg" data-aos="fade-up">
+
+    
+        <div class="container d-flex">
+        <div class="row row-cols-1 row-cols-md-3">
+    @foreach (var item in Model)
+    {
+        
+                <div class="col col-md-4 mt-2">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="card-img-actions">
+                                    <a asp-action="Details" asp-route-id="@item.ItemId" class="option1">
+                                <img src="~/assets/img/upload/@item.ItemImage"
+                                     class="card-img img-fluid"
+                                     width="96"
+                                     height="350"
+                                     height="350"
+                                     alt="" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card-body bg-light text-center">
+                            <div class="mb-2">
+                                <h6 class="font-weight-semibold mb-2">
+                                    <a asp-action="Details" asp-route-id="@item.ItemId" class="option1">
+                                    @item.ItemName
+                                    </a>
+                                </h6>
+
+                                <a href="#" class="text-muted" data-abc="true"></a>
+                            </div>
+
+                            <h3 class="mb-0 font-weight-semibold">@Html.DisplayFor(modelItem => item.ItemPrice)</h3>
+
+                            <div>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                                <i class="fa fa-star star"></i>
+                            </div>
+
+                            <div class="text-muted mb-3">34 reviews</div>
+
+                            <a asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@item.ItemId" class="option2 btn btn-outline-primary">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+    }
+            </div>
+        </div>
 </div>
-
-<table class="table table-bordered p-3">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemsInStock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InStock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastOrderedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Manufacturer)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var item in Model)
-        {
-            <tr style="background-color: #eee;">
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemsInStock)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InStock)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastOrderedDate)
-                </td>
-                <td>
-                    <img src="~/assets/img/upload/t_@item.ItemImage" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Manufacturer.ManufacturerId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ItemId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a> |
-                    <a asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@item.ItemId" class="option2">Add To Cart</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 </div>

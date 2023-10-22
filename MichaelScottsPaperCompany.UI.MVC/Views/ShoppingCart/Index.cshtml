@@ -5,6 +5,7 @@
     decimal? cartTotal = 0;
 }
 
+<div class="section-bg" data-aos="fade-up">
 <section class="product_section layout_padding">
     <div class="container">
         <div class="heading_container heading_center">
@@ -42,9 +43,9 @@
                     {
                         <tr>
                             <td>
-                                <img src="~/images/t_@item.Value.Item.ItemImage" alt="@item.Value.Item.ItemName" />
+                                <img src="~/assets/img/upload/t_@item.Value.Item.ItemImage" alt="@item.Value.Item.ItemName" />
                             </td>
-                            <td>
+                            <td class="text-center">
                                 <form asp-action="UpdateCart">
                                     <input type="hidden" name="productId" value="@item.Key" />
                                     <input type="text" name="qty" value="@item.Value.Qty" class="form-control d-block mx-auto text-center w-50" />
@@ -52,7 +53,7 @@
                                 </form>
                             </td>
                             <td>
-                                @item.Value.Item.ItemName;
+                                @item.Value.Item.ItemName
                             </td>
                             <td>
                                 @string.Format($"{@item.Value.Item.ItemPrice:c}")
@@ -98,3 +99,4 @@
         }
     </div>
 </section>
+</div>

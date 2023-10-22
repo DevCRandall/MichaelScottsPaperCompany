@@ -1,350 +1,338 @@
-﻿@{
+﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.Item>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<!-- ======= hero Section ======= -->
+@* <!-- ======= hero Section ======= -->
 <section id="hero">
-    <div class="hero-container">
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-            <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
-
-            <div class="carousel-inner" role="listbox">
-
-                <div class="carousel-item active" style="background-image: url(~/assets/img/hero-carousel/1.jpg)">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">We are professional</h2>
-                            <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+    <div class="container">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    @foreach (var item in Model)
+                    {
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-6 text-center align-self-center">
+                                    <img class="img-fluid" src="~/assets/img/upload/@item.ItemImage" />
+                                </div>
+                                <div class="col-md-6 info">
+                                    <div class="row title">
+                                        <div class="col">
+                                            <h2>Herbalism</h2>
+                                        </div>
+                                        <div class="col text-right">
+                                            <a href="#"><i class="fa fa-heart-o"></i></a>
+                                        </div>
+                                    </div>
+                                    <p>Natural herbal wash</p>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-full"></span>
+                                    <span id="reviews">1590 Reviews</span>
+                                    <div class="row price">
+                                        <label class="radio">
+                                            <input type="radio" name="size1" value="small" checked />
+                                            <span>
+                                                <big><b>1.5 oz.</b></big>
+                                                $12.95
+                                            </span>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="size1" value="large" />
+                                            <span>
+                                                <big><b>4.4 oz.</b></big>$21.95
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row lower">
+                                <div class="col">
+                                    <a class="carousel-control-prev" href="#demo" data-slide="prev"><i class="fa fa-arrow-left"></i></a>
+                                    <a class="carousel-control-next" href="#demo" data-slide="next"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                                <div class="col text-right align-self-center"><button class="btn">Add to cart</button></div>
+                            </div>
                         </div>
-                    </div>
+                    @* } 
                 </div>
+            </div>
+        </div>
+    </div> *@
 
-                <div class="carousel-item" style="background-image: url(~/assets/img/hero-carousel/2.jpg)">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">At vero eos et accusamus</h2>
-                            <p class="animate__animated animate__fadeInUp">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-                            <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="carousel-item" style="background-image: url(~/assets/img/hero-carousel/3.jpg)">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>
-                            <p class="animate__animated animate__fadeInUp">Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-                            <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
-                        </div>
-                    </div>
-                </div>
+</section><!-- End Hero Section -->
+<!-- ======= Featured Services Section Section ======= -->
+<section id="featured-services">
+    <div class="container">
+        <div class="row">
 
-                <div class="carousel-item" style="background-image: url(~/assets/img/hero-carousel/4.jpg)">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">Nam libero tempore</h2>
-                            <p class="animate__animated animate__fadeInUp">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
-                            <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item" style="background-image: url(~/assets/img/hero-carousel/5.jpg)">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">Magnam aliquam quaerat</h2>
-                            <p class="animate__animated animate__fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="col-lg-4 box">
+                <i class="bi bi-briefcase"></i>
+                <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
+                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
 
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
+            <div class="col-lg-4 box box-bg">
+                <i class="bi bi-card-checklist"></i>
+                <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
 
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
+            <div class="col-lg-4 box">
+                <i class="bi bi-binoculars"></i>
+                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
 
         </div>
     </div>
-</section><!-- End Hero Section -->
+</section><!-- End Featured Services Section -->
+<!-- ======= About Us Section ======= -->
+<section id="about">
+    <div class="container" data-aos="fade-up">
 
+        <header class="section-header">
+            <h3>About Us</h3>
+            <p>Welcome to Michael Scott's Paper Company, your one-stop destination for exquisite paper goods! We are passionate about the art of paper, and our mission is to bring creativity, elegance, and practicality to your everyday life. From beuaatifully crafted stationary to eco-friendly packaging solutions, we take pride in curating a selection that combines quality, style, and sustainability. Our team is dedicated to delivering products that inspire, connect, and enhance your unique moments. Join us in celebrating the beauty of paper and elevate your personal and professional endeavors with Michael Scott's Paper Company.</p>
+        </header>
 
+        <div class="row about-cols">
 
-    <!-- ======= Featured Services Section Section ======= -->
-    <section id="featured-services">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-4 box">
-                    <i class="bi bi-briefcase"></i>
-                    <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-col">
+                    <div class="img">
+                        <img src="~/assets/img/about-mission.jpg" alt="" class="img-fluid">
+                        <div class="icon"><i class="bi bi-bar-chart"></i></div>
+                    </div>
+                    <h2 class="title"><a href="#">Our Mission</a></h2>
+                    <p>
+                        At Michael Scott's Paper Company, we are dedicated to enhancing your daily life through the beauty and versitilaty of paper. Our commitment is to offer unique paper goods that capture your imagination and embrace sustainability. Join us in our journey to celebrate paper's endless possibilities.
+                    </p>
                 </div>
-
-                <div class="col-lg-4 box box-bg">
-                    <i class="bi bi-card-checklist"></i>
-                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                </div>
-
-                <div class="col-lg-4 box">
-                    <i class="bi bi-binoculars"></i>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                </div>
-
             </div>
-        </div>
-    </section><!-- End Featured Services Section -->
-    <!-- ======= About Us Section ======= -->
-    <section id="about">
-        <div class="container" data-aos="fade-up">
 
-            <header class="section-header">
-                <h3>About Us</h3>
-                <p>Welcome to Michael Scott's Paper Company, your one-stop destination for exquisite paper goods! We are passionate about the art of paper, and our mission is to bring creativity, elegance, and practicality to your everyday life. From beuaatifully crafted stationary to eco-friendly packaging solutions, we take pride in curating a selection that combines quality, style, and sustainability. Our team is dedicated to delivering products that inspire, connect, and enhance your unique moments. Join us in celebrating the beauty of paper and elevate your personal and professional endeavors with Michael Scott's Paper Company.</p>
-            </header>
-
-            <div class="row about-cols">
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="about-col">
-                        <div class="img">
-                            <img src="~/assets/img/about-mission.jpg" alt="" class="img-fluid">
-                            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-                        </div>
-                        <h2 class="title"><a href="#">Our Mission</a></h2>
-                        <p>
-                            At Michael Scott's Paper Company, we are dedicated to enhancing your daily life through the beauty and versitilaty of paper. Our commitment is to offer unique paper goods that capture your imagination and embrace sustainability. Join us in our journey to celebrate paper's endless possibilities.
-                        </p>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-col">
+                    <div class="img">
+                        <img src="~/assets/img/about-plan.jpg" alt="" class="img-fluid">
+                        <div class="icon"><i class="bi bi-brightness-high"></i></div>
                     </div>
+                    <h2 class="title"><a href="#">Our Plan</a></h2>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </p>
                 </div>
+            </div>
 
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="about-col">
-                        <div class="img">
-                            <img src="~/assets/img/about-plan.jpg" alt="" class="img-fluid">
-                            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-                        </div>
-                        <h2 class="title"><a href="#">Our Plan</a></h2>
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        </p>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="about-col">
+                    <div class="img">
+                        <img src="~/assets/img/about-vision.jpg" alt="" class="img-fluid">
+                        <div class="icon"><i class="bi bi-calendar4-week"></i></div>
                     </div>
+                    <h2 class="title"><a href="#">Our Vision</a></h2>
+                    <p>
+                        At our company, we envision a world where paper transcends it conventional use. We strive to be the go to platform for paper enthusiasts, uniting people through creativity, connection, and sustainability. Our vision is to make Michael Scott's Paper Company a symbol of quality, inspiration, and environmental responsibility. Together we're shaping a future where paper continues to inspire connect, and support a greener world.
+                    </p>
                 </div>
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="about-col">
-                        <div class="img">
-                            <img src="~/assets/img/about-vision.jpg" alt="" class="img-fluid">
-                            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-                        </div>
-                        <h2 class="title"><a href="#">Our Vision</a></h2>
-                        <p>
-                            At our company, we envision a world where paper transcends it conventional use. We strive to be the go to platform for paper enthusiasts, uniting people through creativity, connection, and sustainability. Our vision is to make Michael Scott's Paper Company a symbol of quality, inspiration, and environmental responsibility. Together we're shaping a future where paper continues to inspire connect, and support a greener world.
-                        </p>
-                    </div>
-                </div>
-
             </div>
 
         </div>
-    </section><!-- End About Us Section -->
-    
-    <!-- ======= Facts Section ======= -->
-    <section id="facts">
-        <div class="container" data-aos="fade-up">
 
-            <header class="section-header">
-                <h3>Facts</h3>
-                <p>U.S Paper Facts</p>
-            </header>
+    </div>
+</section><!-- End About Us Section -->
+<!-- ======= Facts Section ======= -->
+<section id="facts">
+    <div class="container" data-aos="fade-up">
 
-            <div class="row counters">
+        <header class="section-header">
+            <h3>Facts</h3>
+            <p>U.S Paper Facts</p>
+        </header>
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+        <div class="row counters">
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
                 <p>% of Total U.S.<br /> manufacturing GDP</p>
-                </div>
+            </div>
 
-                <div class="col-lg-3 col-6 text-center">
+            <div class="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="925000" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>People Employed</p>
-                </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>% of wood pulp<br />used for paper</p>
-                </div>
-
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>% of paper documentation<br /> Companies lose</p>
-                </div>
-
+                <p>People Employed</p>
             </div>
 
-            <div class="facts-img">
-                <img src="~/assets/img/PaperCompany.png" alt="" class="img-fluid">
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+                <p>% of wood pulp<br />used for paper</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+                <p>% of paper documentation<br /> Companies lose</p>
             </div>
 
         </div>
-    </section><!-- End Facts Section -->
-    <!-- ======= Team Section ======= -->
-    <section id="team">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header">
-                <h3>Team</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+
+        <div class="facts-img">
+            <img src="~/assets/img/PaperCompany.png" alt="" class="img-fluid">
+        </div>
+
+    </div>
+</section><!-- End Facts Section -->
+<!-- ======= Team Section ======= -->
+<section id="team">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h3>Team</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-up" data-aos-delay="100">
+                    <img src="~/assets/img/team-1.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                        <img src="~/assets/img/team-1.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-up" data-aos-delay="200">
+                    <img src="~/assets/img/team-2.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="200">
-                        <img src="~/assets/img/team-2.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-up" data-aos-delay="300">
+                    <img src="~/assets/img/team-3.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="300">
-                        <img src="~/assets/img/team-3.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-up" data-aos-delay="400">
+                    <img src="~/assets/img/team-4.jpg" class="img-fluid" alt="">
+                    <div class="member-info">
+                        <div class="member-info-content">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="400">
-                        <img src="~/assets/img/team-4.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
-    </section><!-- End Team Section -->
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="section-bg">
-        <div class="container" data-aos="fade-up">
 
-            <div class="section-header">
-                <h3>Contact Us</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+    </div>
+</section><!-- End Team Section -->
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h3>Contact Us</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row contact-info">
+
+            <div class="col-md-4">
+                <div class="contact-address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Address</h3>
+                    <address>A108 Adam Street, NY 535022, USA</address>
+                </div>
             </div>
 
-            <div class="row contact-info">
-
-                <div class="col-md-4">
-                    <div class="contact-address">
-                        <i class="bi bi-geo-alt"></i>
-                        <h3>Address</h3>
-                        <address>A108 Adam Street, NY 535022, USA</address>
-                    </div>
+            <div class="col-md-4">
+                <div class="contact-phone">
+                    <i class="bi bi-phone"></i>
+                    <h3>Phone Number</h3>
+                    <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="contact-phone">
-                        <i class="bi bi-phone"></i>
-                        <h3>Phone Number</h3>
-                        <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="contact-email">
-                        <i class="bi bi-envelope"></i>
-                        <h3>Email</h3>
-                        <p><a href="mailto:info@example.com">info@example.com</a></p>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="form">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                    </div>
-                    <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
-                </form>
+            <div class="col-md-4">
+                <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
             </div>
 
         </div>
-    </section><!-- End Contact Section -->
 
+        <div class="form">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+        </div>
+
+    </div>
+</section><!-- End Contact Section -->

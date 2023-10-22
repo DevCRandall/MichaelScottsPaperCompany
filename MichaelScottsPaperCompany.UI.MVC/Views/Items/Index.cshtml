@@ -1,85 +1,102 @@
 ﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.Item>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tiled Items";
 }
+<div class="m-3">
+    <h1 class="p-4">Shop</h1>
 
-<h1>Index</h1>
+    <div class="d-flex align-items-end flex-column px-3">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Add +</a>
+        </p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemsInStock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InStock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastOrderedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ItemImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Manufacturer)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemsInStock)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InStock)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastOrderedDate)
-                </td>
-                <td>
-                    <img src="~/assets/img/upload/t_@item.ItemImage" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Manufacturer.ManufacturerId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ItemId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a> |
-                    <a asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@item.ItemId" class="option2">Add To Cart</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <div class="row gx-0 gy-x">
+            <div class="col-2 align-items-center d-flex flex-row-reverse">
+                <a asp-action="Index" asp-controller="Items"><i class="bi bi-list-ul text-primary fw-bold"></i></a>
+                <a asp-action="Tiled" asp-controller="Items"><i class="bi bi-grid-3x3-gap fw-light"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section-bg" data-aos="fade-up">
+
+    @foreach (var item in Model)
+    {
+        <section style="background-color: #eee;">
+            <div class="container py-1">
+                <div class="row justify-content-center mb-1">
+                    <div class="col-md-12 col-xl-10">
+                        <div class="card shadow-0 border rounded-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                        <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                            <a asp-action="Details" asp-route-id="@item.ItemId" class="option1">
+                                            <img src="~/assets/img/upload/t_@item.ItemImage"
+                                                 class="w-100" />
+                                            </a>
+                                            <a href="#!">
+                                                <div class="hover-overlay">
+                                                    <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-xl-6">
+                                        <h5>@item.ItemName</h5>
+                                        <div class="d-flex flex-row">
+                                            <div class="text-danger mb-1 me-2">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            @* <span>310</span> *@
+                                        </div>
+                                        <div class="mt-1 mb-0 text-muted small">
+                                            <span>@item.ItemDescription</span>
+                                            @* <span class="text-primary"> • </span>
+                                            <span>Light weight</span>
+                                            <span class="text-primary"> • </span>
+                                            <span>Best finish<br /></span> *@
+                                        </div>
+                                        @* <div class="mb-2 text-muted small">
+                                            <span>Unique design</span>
+                                            <span class="text-primary"> • </span>
+                                            <span>For men</span>
+                                            <span class="text-primary"> • </span>
+                                            <span>Casual<br /></span>
+                                        </div> *@
+                                        @* <p class="text-truncate mb-4 mb-md-0">
+                                            @item.ItemDescription
+                                        </p> *@
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                        <div class="d-flex flex-row align-items-center mb-1">
+                                            <h4 class="mb-1 me-1">@Html.DisplayFor(modelItem => item.ItemPrice)</h4>
+                                            @* <span class="text-danger"><s>@item.ItemPrice</s></span> *@
+                                        </div>
+                                        <h6 class="text-success">Free shipping</h6>
+                                        <div class="d-flex flex-column mt-4">
+                                            <a asp-action="Details"
+                                               asp-route-id="@item.ItemId"
+                                               class="option1 btn btn-primary btn-sm">
+                                                Details
+                                            </a>
+                                            <a asp-action="AddToCart"
+                                               asp-controller="ShoppingCart"
+                                               asp-route-id="@item.ItemId" class="option2 btn btn-outline-primary btn-sm mt-2">Add To Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</div>
+    </div>
