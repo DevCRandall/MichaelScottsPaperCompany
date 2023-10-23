@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.Manufacturer>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Manufacturers";
 }
 
-<h1>Index</h1>
+<h1 class="p-4">Manufacturers</h1>
+<div class="m-3">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <div class="d-flex align-items-end flex-column px-3">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Add +</a>
+        </p>
+    </div>
 <table class="table">
     <thead>
         <tr>
@@ -57,3 +60,4 @@
 }
     </tbody>
 </table>
+</div>

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.Item>
 
 @{
-    ViewData["Title"] = "Tiled Items";
+    ViewData["Title"] = "Items";
 }
 <div class="m-3">
     <h1 class="p-4">Shop</h1>
@@ -12,7 +12,7 @@
         </p>
 
         <div class="row gx-0 gy-x">
-            <div class="col-2 align-items-center d-flex flex-row-reverse">
+            <div class="col-2 align-items-center d-flex flex-row-reverse fs-4">
                 <a asp-action="Index" asp-controller="Items"><i class="bi bi-list-ul text-primary fw-bold"></i></a>
                 <a asp-action="Tiled" asp-controller="Items"><i class="bi bi-grid-3x3-gap fw-light"></i></a>
             </div>
@@ -80,10 +80,10 @@
                                         </div>
                                         <h6 class="text-success">Free shipping</h6>
                                         <div class="d-flex flex-column mt-4">
-                                            <a asp-action="Details"
+                                            <a asp-action="Edit"
                                                asp-route-id="@item.ItemId"
                                                class="option1 btn btn-primary btn-sm">
-                                                Details
+                                                Edit
                                             </a>
                                             <a asp-action="AddToCart"
                                                asp-controller="ShoppingCart"

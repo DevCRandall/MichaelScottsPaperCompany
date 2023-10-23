@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MichaelScottsPaperCompany.DATA.EF.Models;
+using MichaelScottsPaperCompany.Utilities;
+using Microsoft.AspNetCore.Hosting;
+using System.Drawing;
 
 namespace MichaelScottsPaperCompany.UI.MVC.Controllers
 {

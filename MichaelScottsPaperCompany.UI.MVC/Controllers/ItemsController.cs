@@ -32,8 +32,8 @@ namespace MichaelScottsPaperCompany.UI.MVC.Controllers
 
         public async Task<IActionResult> Tiled()
         {
-            var gadgetStoreContext = _context.Items.Include(p => p.Category).Include(p => p.Manufacturer);
-            return View(await gadgetStoreContext.ToListAsync());
+            var michaelScottsPaperCompanyContext = _context.Items.Include(i => i.Category).Include(i => i.Manufacturer);
+            return View(await michaelScottsPaperCompanyContext.ToListAsync());
         }
 
         // GET: Items/Details/5

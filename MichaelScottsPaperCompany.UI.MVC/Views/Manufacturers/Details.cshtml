@@ -1,14 +1,12 @@
 ﻿@model MichaelScottsPaperCompany.DATA.EF.Models.Manufacturer
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Manufacturer Details";
 }
 
-<h1>Details</h1>
+<h1 class="p-3">Manufacturer Details</h1>
 
-<div>
-    <h4>Manufacturer</h4>
-    <hr />
+<div class="p-3">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ManufacturerName)
@@ -41,8 +39,8 @@
             @Html.DisplayFor(model => model.Zip)
         </dd>
     </dl>
-</div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ManufacturerId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ManufacturerId" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</div>
 </div>
