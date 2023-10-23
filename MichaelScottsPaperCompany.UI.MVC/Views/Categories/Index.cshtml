@@ -29,54 +29,17 @@
             {
                 <tr>
                     <td>
+                        <a
+                        asp-action="Details" asp-route-id="@item.CategoryId" class="option1">
                         @Html.DisplayFor(modelItem => item.CategoryName)
+                        </a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.CategoryDescription)
                     </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Delete
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Category</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <dl>
-                                            <div>
-                                                <dt>
-                                                    @Html.DisplayNameFor(modelItem => item.CategoryName)
-                                                </dt>
-                                                <dd>
-                                                    @Html.DisplayFor(modelItem => item.CategoryName)
-                                                </dd>
-                                                <dt>
-                                                    @Html.DisplayNameFor(model => item.CategoryDescription)
-                                                </dt>
-                                                <dd>
-                                                    @Html.DisplayFor(modelItem => item.CategoryDescription)
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-danger">Delete</a>
-                                        @*<button type="button" class="btn btn-primary">Save changes</button>*@
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <td class="col col-2 text-center">
+                        <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-danger btn-sm mt-1">Delete</a>
                     </td>
                 </tr>
             }
