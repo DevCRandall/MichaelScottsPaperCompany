@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.UserDetail>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Users";
 }
 
-<h1>Index</h1>
+<h1 class="p-3">User</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="d-flex align-items-end flex-column p-3">
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Add +</a>
+    </p>
 <table class="table">
     <thead>
         <tr>
@@ -67,11 +68,12 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-outline-primary btn-sm">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-primary btn-sm">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>

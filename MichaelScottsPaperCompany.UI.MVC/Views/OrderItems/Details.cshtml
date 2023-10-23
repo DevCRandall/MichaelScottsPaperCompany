@@ -1,14 +1,12 @@
 ﻿@model MichaelScottsPaperCompany.DATA.EF.Models.OrderItem
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Order Details";
 }
 
-<h1>Details</h1>
+<h1 class="p-3">Order Details</h1>
 
-<div>
-    <h4>OrderItem</h4>
-    <hr />
+<div class="p-3">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Quantity)
@@ -37,6 +35,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.OrderItemId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.OrderItemId" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </div>

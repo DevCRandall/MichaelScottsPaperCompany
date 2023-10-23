@@ -1,15 +1,12 @@
 ﻿@model MichaelScottsPaperCompany.DATA.EF.Models.Sale
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete Sale";
 }
 
-<h1>Delete</h1>
+<h1 class="p-3">Delete Sale</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Sale</h4>
-    <hr />
+<div class="p-3">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.SaleDate)
@@ -51,7 +48,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="SaleId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
