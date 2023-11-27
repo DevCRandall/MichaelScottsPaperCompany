@@ -5,15 +5,15 @@
 }
 
 <h1 class="p-4">Categories</h1>
-<div class="m-3">
+<div class="m-3" data-aos="fade-up">
 
     <div class="d-flex align-items-end flex-column px-3">
         <p>
             <a asp-action="Create" class="btn btn-primary">Add +</a>
         </p>
     </div>
-    <table class="table table-bordered p-3">
-        <thead>
+    <table class="table table-bordered table-dark table-striped p-3">
+        <thead class="table-secondary">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.CategoryName)

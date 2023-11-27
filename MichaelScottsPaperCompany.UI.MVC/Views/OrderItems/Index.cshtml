@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<MichaelScottsPaperCompany.DATA.EF.Models.OrderItem>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Orders";
 }
 
-<h1 class="p-3">Index</h1>
+<h1 class="p-3">Orders</h1>
 
 <div class="d-flex align-items-end flex-column p-3">
 <p>
     <a asp-action="Create" class="btn btn-primary">Add +</a>
 </p>
-<table class="table">
+    <table class="table" data-aos="fade-up">
     <thead>
         <tr>
             <th>

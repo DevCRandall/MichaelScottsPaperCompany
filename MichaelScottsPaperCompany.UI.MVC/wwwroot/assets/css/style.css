@@ -2041,6 +2041,7 @@ section {
   padding: 0 0 30px 0;
   color: #eee;
   font-size: 14px;
+  display: 10dvh;
 }
 
 #footer .footer-top {

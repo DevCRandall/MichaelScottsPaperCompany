@@ -5,18 +5,20 @@
 }
 
 <h1 class="p-4">Manufacturers</h1>
-<div class="m-3">
+<div class="m-3" data-aos="fade-up">
 
     <div class="d-flex align-items-end flex-column px-3">
         <p>
             <a asp-action="Create" class="btn btn-primary">Add +</a>
         </p>
     </div>
-<table class="table">
-    <thead>
+    <table class="table table-dark table-striped">
+    <thead class="table-secondary">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ManufacturerName)
+                
+                    @Html.DisplayNameFor(model => model.ManufacturerName)
+                
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Address)
@@ -37,7 +39,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                <a
+                asp-action="Details" asp-route-id="@item.ManufacturerId" class="option1">
                 @Html.DisplayFor(modelItem => item.ManufacturerName)
+                </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Address)
@@ -52,9 +57,8 @@
                 @Html.DisplayFor(modelItem => item.Zip)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ManufacturerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ManufacturerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ManufacturerId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ManufacturerId" class="btn btn-primary btn-sm">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.ManufacturerId" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
 }
